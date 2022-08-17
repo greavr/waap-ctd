@@ -49,11 +49,6 @@ variable "services_to_enable" {
     ]
 }
 
-variable "apigee-token" {
-    default = "ya29.A0AVA9y1uYdniO73mw75NcbgM8BZz_fzaLaryMtTtKLtICLP2aSIPklUITZDO1PRQxlSf32ffV59Eg21E5_DiuxQot9EureJ7Z1i1TGAvzdJIzMemFsblPfTdmbrV3bJKIADIQEgYb9GYqE6esa1qWPE4J3rWhvq6ThpI0V-8-MrpoKyxiF-Sy-gq3kPQ-EymByxTOVsP3feNERCNqiRm8HqmgVL9pQ3J_6a5vf7kff63miZ3NaaGRT5puN5Son6wPrM402D_T2gYUNnWUtBVEFTQVRBU0ZRRTY1ZHI4M0JFZlVPRlQ0VEkwWjVDSU5ncENGdw0273"
-}
-
-
 variable "gcs-bucket-name" {
     default = "juiceshop-code" 
 }
