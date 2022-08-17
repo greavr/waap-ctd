@@ -1,29 +1,29 @@
 # ----------------------------------------------------------------------------------------------------------------------
 # Juiceshop GCE Container Setup
 # ----------------------------------------------------------------------------------------------------------------------
-# module "gce-container" {
-#   source = "terraform-google-modules/container-vm/google"
-#   version = "~> 3.0"
+module "gce-container" {
+  source = "terraform-google-modules/container-vm/google"
+  version = "~> 3.0"
 
-#   container = {
-#     name = "juiceshop-demo-mig-template"
-#     image = "gcr.io/${project_id}/waap-juice-shop:latest"
-#     securityContext = {
-#       privileged : false
-#     }
-#     stdin : false
-#     tty : true
+  container = {
+    name = "juiceshop-demo-mig-template"
+    image = var.docker_image_name
+    securityContext = {
+      privileged : false
+    }
+    stdin : false
+    tty : true
 
-#     # Declare volumes to be mounted.
-#     # This is similar to how docker volumes are declared.
-#     volumeMounts = []
-#   }
+    # Declare volumes to be mounted.
+    # This is similar to how docker volumes are declared.
+    volumeMounts = []
+  }
 
-#   # Declare the Volumes which will be used for mounting.
-#   volumes = []
+  # Declare the Volumes which will be used for mounting.
+  volumes = []
 
-#   restart_policy = "Always"
-# }
+  restart_policy = "Always"
+}
 
 # ----------------------------------------------------------------------------------------------------------------------
 # Create GCE SA

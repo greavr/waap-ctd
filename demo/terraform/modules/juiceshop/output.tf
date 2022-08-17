@@ -1,7 +1,3 @@
-output "cloud_armour_policy" {
-  value = google_compute_security_policy.waap_policies
-}
-
 output "gce-sa" {
   value = google_service_account.compute_service_account
 }

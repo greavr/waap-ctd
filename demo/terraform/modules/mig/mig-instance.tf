@@ -26,7 +26,7 @@ resource "google_compute_instance_template" "apigee_proxy" {
     startup-script-url = "gs://apigee-5g-saas/apigee-envoy-proxy-release/latest/conf/startup-script.sh"
   }
   service_account {
-    email  = var.gce-sa.email
+    email  = google_service_account.apigee-gce-sa.email
     scopes = ["cloud-platform"]
   }
     

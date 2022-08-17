@@ -44,13 +44,12 @@ resource "google_compute_backend_service" "juiceshop_be" {
   port_name        = "http-juiceshop"
   project          = var.project_id
   protocol         = "HTTP"
-  security_policy  = google_compute_security_policy.waap_policies.name
+  security_policy  = var.cloud_armour_policy.name
   session_affinity = "NONE"
   timeout_sec      = 30
 
   depends_on = [
-    google_compute_health_check.juiceshop_healthcheck,
-    google_compute_security_policy.waap_policies
+    google_compute_health_check.juiceshop_healthcheck
   ]
 }
 
