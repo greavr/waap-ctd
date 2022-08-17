@@ -82,7 +82,7 @@ module "apigee" {
 # Configure 3P Apigee
 # ----------------------------------------------------------------------------------------------------------------------
 provider "apigee" {
-  access_token = var.apigee-token
+  access_token = data.google_client_config.current.access_token
   organization = module.apigee.apigee_org.id
 }
 
